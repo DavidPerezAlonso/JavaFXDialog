@@ -51,14 +51,15 @@ public class MyController {
    // Este método mostrará un dialog box de información con la estación del año
    void ShowSeason(Date now) throws ParseException{
 	   String sAux = "";
-	   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+	   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	   Date spring = sdf.parse("2017-03-20");
 	   Date summer = sdf.parse("2017-06-21");
 	   Date fall = sdf.parse("2017-09-22");
 	   Date winter = sdf.parse("2017-12-21");
 
-
-	   if( now.compareTo(spring) <= 0)
+	   int iAux;
+	   iAux = now.compareTo(spring);
+	   if(  iAux <= 0)
 		   sAux="WINTER!!!";
 	   else{
 		   if( now.compareTo(summer) <= 0)
